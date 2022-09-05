@@ -8,7 +8,8 @@ body{
 }
 
 #container {
-    background-color: grey;
+    background-color: #9e9e9e;
+    border: 20px solid white;
 }
 
 .header{
