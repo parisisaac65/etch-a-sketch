@@ -9,8 +9,7 @@ resizeBtn.addEventListener('click', resizeGrid);
 
 
 function createGrid(numOfSquares){
-    container.style.cssText=`display:grid; width: 80%; height: 50%; margin-left: 80px; margin-top: 20px; padding-bottom: 8px; border: 50px solid red; grid-template-columns: repeat(${numOfSquares},1fr); grid-template-rows: repeat(${numOfSquares},1fr); background-color: rgba(149, 149, 149, 0.5); justify-content: center;`;
-    //container.style.cssText=`display:grid; width: 960px; height: 500px; grid-template-columns: repeat(${numOfSquares},auto); grid-template-rows: repeat(${numOfSquares},auto); background-color: rgba(149, 149, 149, 0.5);`;
+    container.style.cssText=`display:grid; width: 80%; height: 50%; margin-left: 85px; margin-top: 20px;  border: 50px solid red; grid-template-columns: repeat(${numOfSquares},1fr); grid-template-rows: repeat(${numOfSquares},1fr); background-color: rgba(149, 149, 149, 0.5);`;
     totalGridSize = numOfSquares ** 2; 
     for (let i = 1; i <= totalGridSize; i++){
         const cell = document.createElement('div');
