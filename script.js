@@ -9,12 +9,12 @@ resizeBtn.addEventListener('click', resizeGrid);
 
 
 function createGrid(numOfSquares){
-    container.style.cssText=`display:grid; width: 80%; height: 50%; margin-left: 85px; margin-top: 20px;  border: 50px solid red; grid-template-columns: repeat(${numOfSquares},1fr); grid-template-rows: repeat(${numOfSquares},1fr); background-color: rgba(149, 149, 149, 0.5);`;
+    container.style.cssText=`display:grid; width: 80%; height: 50%; margin-left: 95px; margin-top: 25px; grid-template-columns: repeat(${numOfSquares},1fr); grid-template-rows: repeat(${numOfSquares},1fr); `;
     totalGridSize = numOfSquares ** 2; 
     for (let i = 1; i <= totalGridSize; i++){
         const cell = document.createElement('div');
         cell.classList.toggle('cell'); 
-        cell.textContent = i;
+        // cell.textContent = i;
         container.appendChild(cell);
         cell.style.cssText='display:grid';
         cell.addEventListener('mouseover',() => {
