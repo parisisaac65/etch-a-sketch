@@ -11,7 +11,7 @@ resizeBtn.addEventListener('click', resizeGrid);
 const clearBtn = document.querySelector('.clear-btn');
 clearBtn.addEventListener('click', clear);
 
-// Add a button to erase 
+// Add a button for eraser
 const eraserBtn = document.querySelector('.eraser-btn');
 
 // Add a button for colored pen 
@@ -21,7 +21,6 @@ const colorBtn = document.querySelector('.color-btn');
 const blackBtn = document.querySelector('.black-btn'); 
 
 function createGrid(numOfSquares){
-    //container.style.cssText=`display:grid; width: 80%; height: 50%; margin-left: 95px; margin-top: 25px; grid-template-columns: repeat(${numOfSquares},1fr); grid-template-rows: repeat(${numOfSquares},1fr); `;
     container.style.cssText=`display:grid; width: 600px; height: 600px; grid-template-columns: repeat(${numOfSquares},1fr); grid-template-rows: repeat(${numOfSquares},1fr); `;
     totalGridSize = numOfSquares ** 2; 
     for (let i = 1; i <= totalGridSize; i++){
