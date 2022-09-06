@@ -12,7 +12,7 @@ const clearBtn = document.querySelector('.clear-btn');
 clearBtn.addEventListener('click', clear);
 
 // Add a button to erase 
-// const eraserBtn = document.querySelector('.eraser-btn');
+const eraserBtn = document.querySelector('.eraser-btn');
 // eraserBtn.addEventListener('click', erase);
 
 const colorBtn = document.querySelector('.color-btn');
@@ -40,6 +40,11 @@ function createGrid(numOfSquares){
         });
         cell.addEventListener('mouseover',() => {
             displayHoverEffect(cell);
+        });
+        eraserBtn.addEventListener('click',() => {
+            cell.addEventListener('mouseover',() => {
+                cell.style.cssText='background-color:white';
+            });
         });
     }
 }
