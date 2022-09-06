@@ -7,6 +7,9 @@ const container = document.querySelector('#container');
 const resizeBtn = document.querySelector('.resize-btn'); 
 resizeBtn.addEventListener('click', resizeGrid); 
 
+// Add a button to clear grid
+const clearBtn = document.querySelector('.clear-btn');
+clearBtn.addEventListener('click', clear);
 
 function createGrid(numOfSquares){
     //container.style.cssText=`display:grid; width: 80%; height: 50%; margin-left: 95px; margin-top: 25px; grid-template-columns: repeat(${numOfSquares},1fr); grid-template-rows: repeat(${numOfSquares},1fr); `;
@@ -21,7 +24,6 @@ function createGrid(numOfSquares){
         cell.addEventListener('mouseover',() => {
             displayHoverEffect(cell); 
         }); 
-    
     }
 }
 
@@ -43,3 +45,9 @@ function resizeGrid(){
     createGrid(numOfSquares); 
 }
 
+function clear(){
+    while (container.hasChildNodes()){
+        container.removeChild(container.firstChild);
+    }
+    createGrid(numOfSquares); 
+}
