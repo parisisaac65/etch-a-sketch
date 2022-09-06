@@ -13,10 +13,11 @@ clearBtn.addEventListener('click', clear);
 
 // Add a button to erase 
 const eraserBtn = document.querySelector('.eraser-btn');
-// eraserBtn.addEventListener('click', erase);
 
+// Add a button for colored pen 
 const colorBtn = document.querySelector('.color-btn');
 
+//Add a button for black pen 
 const blackBtn = document.querySelector('.black-btn'); 
 
 function createGrid(numOfSquares){
@@ -67,11 +68,10 @@ function displayHoverEffect(cell){
     
 createGrid(numOfSquares); 
 
-
 function resizeGrid(){
     numOfSquares = prompt('Please enter the number of squares per side for new grid: ');
-    while (numOfSquares > 100){
-        numOfSquares = prompt('Please enter a number 100 or lower'); 
+    while (numOfSquares > 64){
+        numOfSquares = prompt('Please enter a number 64 or lower'); 
     }
     while (container.hasChildNodes()){
         container.removeChild(container.firstChild);
