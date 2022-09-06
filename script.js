@@ -11,6 +11,14 @@ resizeBtn.addEventListener('click', resizeGrid);
 const clearBtn = document.querySelector('.clear-btn');
 clearBtn.addEventListener('click', clear);
 
+// Add a button to erase 
+// const eraserBtn = document.querySelector('.eraser-btn');
+// eraserBtn.addEventListener('click', erase);
+
+const colorBtn = document.querySelector('.color-btn');
+
+const blackBtn = document.querySelector('.black-btn'); 
+
 function createGrid(numOfSquares){
     //container.style.cssText=`display:grid; width: 80%; height: 50%; margin-left: 95px; margin-top: 25px; grid-template-columns: repeat(${numOfSquares},1fr); grid-template-rows: repeat(${numOfSquares},1fr); `;
     container.style.cssText=`display:grid; width: 600px; height: 600px; grid-template-columns: repeat(${numOfSquares},1fr); grid-template-rows: repeat(${numOfSquares},1fr); `;
@@ -18,13 +26,34 @@ function createGrid(numOfSquares){
     for (let i = 1; i <= totalGridSize; i++){
         const cell = document.createElement('div');
         cell.classList.toggle('cell'); 
-        // cell.textContent = i;
         container.appendChild(cell);
         cell.style.cssText='display:grid';
+        blackBtn.addEventListener('click',()=> {
+            cell.addEventListener('mouseover',() => {
+                displayHoverEffect(cell);
+            });
+        });
+        colorBtn.addEventListener('click',() => {
+            cell.addEventListener('mouseover', () => {
+                displayColorHoverEffect(cell);
+            });
+        });
         cell.addEventListener('mouseover',() => {
-            displayHoverEffect(cell); 
-        }); 
+            displayHoverEffect(cell);
+        });
     }
+}
+
+function randomNum(max){
+    return Math.floor(Math.random()*(max+1)); 
+}
+
+function displayColorHoverEffect(cell){
+    let r = randomNum(255);
+    let g = randomNum(255);
+    let b = randomNum (255);
+
+    cell.style.cssText=`background-color:rgb(${r},${g},${b})`;
 }
 
 function displayHoverEffect(cell){
