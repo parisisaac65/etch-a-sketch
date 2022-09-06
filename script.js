@@ -9,7 +9,8 @@ resizeBtn.addEventListener('click', resizeGrid);
 
 
 function createGrid(numOfSquares){
-    container.style.cssText=`display:grid; width: 80%; height: 50%; margin-left: 95px; margin-top: 25px; grid-template-columns: repeat(${numOfSquares},1fr); grid-template-rows: repeat(${numOfSquares},1fr); `;
+    //container.style.cssText=`display:grid; width: 80%; height: 50%; margin-left: 95px; margin-top: 25px; grid-template-columns: repeat(${numOfSquares},1fr); grid-template-rows: repeat(${numOfSquares},1fr); `;
+    container.style.cssText=`display:grid; width: 600px; height: 600px; grid-template-columns: repeat(${numOfSquares},1fr); grid-template-rows: repeat(${numOfSquares},1fr); `;
     totalGridSize = numOfSquares ** 2; 
     for (let i = 1; i <= totalGridSize; i++){
         const cell = document.createElement('div');
